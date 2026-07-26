@@ -16,9 +16,9 @@ const I18N = {
 
     "about.kicker": "Sobre mí",
     "about.title": "Aprendiendo y construyendo a la vez.",
-    "about.text1": "Soy Carles: estudiante de 4º de ESO y, a la vez, diseñador y desarrollador web. Empecé a programar por curiosidad y, con el tiempo, se ha convertido en mi manera de crear cosas que otros usan de verdad.",
-    "about.text2": "Cada proyecto lo trato igual, sea quien sea el cliente: primero entiendo para qué sirve la web y a quién habla, después le doy una identidad visual propia, y por último la construyo con código cuidado, rápido y que funciona en cualquier dispositivo.",
-    "about.text3": "Estar en formación no significa trabajar a medias. Cada web que entrego cumple los mismos estándares que le pondría cualquier estudio: diseño con intención, desarrollo limpio y atención al detalle de principio a fin.",
+    "about.text1": "Hola, soy Carles: estudio bachillerato y, a la vez, soy diseñador y desarrollador web. Empecé a crear proyectos reales hace unos meses, aunque llevo más tiempo formándome en diseño y programación. El resultado es un trabajo profesional y limpio, pensado para acompañar el crecimiento de tu negocio.",
+    "about.text2": "Cada proyecto es único para mí. Sigo una estructura clara a la hora de abordarlos: primero entiendo la propuesta poniéndome en contacto contigo; después busco la solución más creativa y profesional posible, cumpliendo en todo momento lo que se me pide; y finalmente entrego un resultado excepcional.",
+    "about.text3": "Ser estudiante no significa que el trabajo tenga menos calidad que el de cualquier otro profesional. Me implico a fondo en cada proyecto para darte el máximo resultado posible.",
 
     "projects.kicker": "Trabajo",
     "projects.title": "Proyectos",
@@ -76,9 +76,9 @@ const I18N = {
 
     "about.kicker": "Sobre mi",
     "about.title": "Aprenent i construint alhora.",
-    "about.text1": "Sóc en Carles: estudiant de 4t d'ESO i, alhora, dissenyador i desenvolupador web. Vaig començar a programar per curiositat i, amb el temps, s'ha convertit en la meva manera de crear coses que altres fan servir de veritat.",
-    "about.text2": "Cada projecte el tracto igual, sigui qui sigui el client: primer entenc per a què serveix la web i a qui parla, després li dono una identitat visual pròpia, i finalment la construeixo amb codi cuidat, ràpid i que funciona en qualsevol dispositiu.",
-    "about.text3": "Estar en formació no vol dir treballar a mitges. Cada web que entrego compleix els mateixos estàndards que hi posaria qualsevol estudi: disseny amb intenció, desenvolupament net i atenció al detall de principi a fi.",
+    "about.text1": "Hola, sóc en Carles: estudio batxillerat i, alhora, sóc dissenyador i desenvolupador web. Vaig començar a crear projectes reals fa uns mesos, tot i que porto més temps formant-me en disseny i programació. El resultat és un treball professional i net, pensat per acompanyar el creixement del teu negoci.",
+    "about.text2": "Cada projecte és únic per a mi. Segueixo una estructura clara a l'hora d'encarar-los: primer entenc la proposta posant-me en contacte amb vosaltres; després busco la solució més creativa i professional possible, complint en tot moment el que se'm demana; i finalment entrego un resultat excepcional.",
+    "about.text3": "Ser estudiant no vol dir que el treball tingui menys qualitat que el de qualsevol altre professional. M'implico a fons en cada projecte per donar-te el màxim resultat possible.",
 
     "projects.kicker": "Feina",
     "projects.title": "Projectes",
@@ -136,9 +136,9 @@ const I18N = {
 
     "about.kicker": "About me",
     "about.title": "Learning and building, at the same time.",
-    "about.text1": "I'm Carles: a 4th-year secondary school student and, at the same time, a web designer and developer. I started coding out of curiosity, and over time it's become my way of creating things other people actually use.",
-    "about.text2": "I treat every project the same way, whoever the client is: first I understand what the website is for and who it's speaking to, then I give it its own visual identity, and finally I build it with clean, fast code that works on every device.",
-    "about.text3": "Being in training doesn't mean working at half measure. Every website I deliver meets the same standards any studio would hold itself to: intentional design, clean development, and attention to detail from start to finish.",
+    "about.text1": "Hi, I'm Carles: I'm a high school student and, at the same time, a web designer and developer. I started taking on real projects a few months ago, though I've spent longer than that training in design and programming. The result is professional, clean work, built to support your business as it grows.",
+    "about.text2": "Every project is unique to me. I follow a clear process for every one: first, I understand the brief by getting in touch with you; then I look for the most creative and professional solution, meeting exactly what's asked of me at every step; and finally, I deliver an outstanding result.",
+    "about.text3": "Being a student doesn't mean the work is any less professional than anyone else's. I put everything into every project to give you the best possible result.",
 
     "projects.kicker": "Work",
     "projects.title": "Projects",
