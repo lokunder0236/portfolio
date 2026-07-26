@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidAnalyticsDoc(data) {
+      return data.keys().hasOnly(['total', 'es', 'ca', 'en'])
+        && data.total is number && data.es is number
+        && data.ca is number && data.en is number;
+    }
+
+    match /analytics/{docId} {
+      allow read: if true;
+      allow create, update: if docId in ['pati', 'nova', 'repx', 'pilates', 'contact']
+                             && isValidAnalyticsDoc(request.resource.data);
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

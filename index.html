@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carles Badia — Diseño &amp; Desarrollo Web</title>
+<meta name="description" content="Portafolio de Carles Badia, diseñador y desarrollador web. Webs personalizadas de diseño a mantenimiento.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- og:image y twitter:image deben ser URLs absolutas una vez desplegado (los rastreadores no resuelven rutas relativas) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Carles Badia — Diseño & Desarrollo Web">
+<meta property="og:description" content="Portafolio de Carles Badia, diseñador y desarrollador web. Webs personalizadas de diseño a mantenimiento.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carles Badia — Diseño & Desarrollo Web">
+<meta name="twitter:description" content="Portafolio de Carles Badia, diseñador y desarrollador web. Webs personalizadas de diseño a mantenimiento.">
+<meta name="twitter:image" content="assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-cubes">
+    <span class="cube cube-a"></span>
+    <span class="cube cube-b"></span>
+    <span class="cube cube-c"></span>
+  </div>
+  <div class="loader-progress"><span></span></div>
+</div>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Ir al contenido</a>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="nav-brand">Carles Badia</a>
+  <nav class="nav-links" aria-label="Secciones">
+    <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+    <a href="#services" data-i18n="nav.services">Servicios</a>
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
+  </nav>
+  <div class="lang-switch" role="group" aria-label="Idioma">
+    <button type="button" class="lang-btn" data-lang="es">ES</button>
+    <button type="button" class="lang-btn" data-lang="ca">CA</button>
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Diseño &amp; Desarrollo Web</p>
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">Construyo webs</span><br>
+        <span class="hero-title-accent" data-i18n="hero.title2">con carácter.</span>
+      </h1>
+      <p class="hero-text" data-i18n="hero.text">Soy Carles, estudiante y diseñador/desarrollador web. Combino formación técnica con una mirada creativa para construir sitios que se ven bien y funcionan mejor.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.ctaProjects">Ver proyectos</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.ctaContact">Hablemos</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="about" class="about">
+    <div class="section-head reveal">
+      <p class="section-kicker" data-i18n="about.kicker">Sobre mí</p>
+      <h2 class="section-title" data-i18n="about.title">Aprendiendo y construyendo a la vez.</h2>
+    </div>
+    <div class="about-text reveal">
+      <p data-i18n="about.text1">Soy Carles: estudiante de 4º de ESO y, a la vez, diseñador y desarrollador web. Empecé a programar por curiosidad y, con el tiempo, se ha convertido en mi manera de crear cosas que otros usan de verdad.</p>
+      <p data-i18n="about.text2">Cada proyecto lo trato igual, sea quien sea el cliente: primero entiendo para qué sirve la web y a quién habla, después le doy una identidad visual propia, y por último la construyo con código cuidado, rápido y que funciona en cualquier dispositivo.</p>
+      <p data-i18n="about.text3">Estar en formación no significa trabajar a medias. Cada web que entrego cumple los mismos estándares que le pondría cualquier estudio: diseño con intención, desarrollo limpio y atención al detalle de principio a fin.</p>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="projects" class="projects">
+    <div class="section-head reveal">
+      <p class="section-kicker" data-i18n="projects.kicker">Trabajo</p>
+      <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
+      <p class="section-sub" data-i18n="projects.sub">Una selección de trabajos, con el detalle de diseño detrás de cada uno.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Proyecto 1: El Pati d'Hivern -->
+      <article class="project-card reveal" data-project="pati">
+        <button class="project-toggle" type="button" aria-expanded="false" aria-controls="panel-pati">
+          <span class="project-logo">
+            <img src="assets/logo-pati.svg" alt="El Pati d'Hivern" width="40" height="40">
+          </span>
+          <span class="project-heading">
+            <span class="project-name" data-i18n="projects.pati.name">El Pati d'Hivern</span>
+            <span class="project-tag" data-i18n="projects.pati.tag">Aula biofílica</span>
+          </span>
+          <span class="project-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="project-panel" id="panel-pati" role="dialog" aria-modal="true">
+          <div class="project-panel-inner">
+            <button class="project-modal-close" type="button" data-i18n-aria="a11y.close" aria-label="Cerrar">&times;</button>
+            <div class="project-modal-header">
+              <span class="project-logo"><img src="assets/logo-pati.svg" alt="El Pati d'Hivern" width="40" height="40"></span>
+              <span class="project-heading">
+                <span class="project-name">El Pati d'Hivern</span>
+                <span class="project-tag" data-i18n="projects.pati.tag">Aula biofílica</span>
+              </span>
+            </div>
+            <p class="project-desc" data-i18n="projects.pati.desc">Web para un espacio educativo biofílico, pensada para transmitir calma y naturaleza desde la primera pantalla.</p>
+            <div class="project-meta">
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.palette">Paleta de colores</span>
+                <div class="swatches">
+                  <span class="swatch" style="background: oklch(50% 0.075 145);" title="Verd oklch(50% 0.075 145)"></span>
+                  <span class="swatch" style="background: oklch(62% 0.115 48);" title="Terracota oklch(62% 0.115 48)"></span>
+                  <span class="swatch" style="background: oklch(22% 0.01 55);" title="Ink oklch(22% 0.01 55)"></span>
+                </div>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.fonts">Tipografías</span>
+                <p class="meta-value">Playfair Display + DM Sans</p>
+              </div>
+            </div>
+            <a class="project-link" href="https://lokunder0236.github.io/METEOSAT/" target="_blank" rel="noopener" data-i18n="projects.meta.viewLink">Ver en GitHub Pages →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: NOVA Construct -->
+      <article class="project-card reveal" data-project="nova">
+        <button class="project-toggle" type="button" aria-expanded="false" aria-controls="panel-nova">
+          <span class="project-logo">
+            <img src="assets/logo-nova.svg" alt="NOVA Construct" width="40" height="40">
+          </span>
+          <span class="project-heading">
+            <span class="project-name">NOVA Construct</span>
+            <span class="project-tag" data-i18n="projects.nova.tag">Constructora</span>
+          </span>
+          <span class="project-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="project-panel" id="panel-nova" role="dialog" aria-modal="true">
+          <div class="project-panel-inner">
+            <button class="project-modal-close" type="button" data-i18n-aria="a11y.close" aria-label="Cerrar">&times;</button>
+            <div class="project-modal-header">
+              <span class="project-logo"><img src="assets/logo-nova.svg" alt="NOVA Construct" width="40" height="40"></span>
+              <span class="project-heading">
+                <span class="project-name">NOVA Construct</span>
+                <span class="project-tag" data-i18n="projects.nova.tag">Constructora</span>
+              </span>
+            </div>
+            <p class="project-desc" data-i18n="projects.nova.desc">Landing corporativa para una constructora, con estética industrial en tonos carbón y dorado metálico.</p>
+            <div class="project-meta">
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.palette">Paleta de colores</span>
+                <div class="swatches">
+                  <span class="swatch" style="background:#0D0D0B;" title="Carbon #0D0D0B"></span>
+                  <span class="swatch" style="background:#E8E4DC;" title="Stone #E8E4DC"></span>
+                  <span class="swatch" style="background:#C2AA80;" title="Metallic #C2AA80"></span>
+                </div>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.fonts">Tipografías</span>
+                <p class="meta-value">Archivo + Space Grotesk + Bodoni Moda</p>
+              </div>
+            </div>
+            <a class="project-link" href="https://lokunder0236.github.io/Nova-construct/" target="_blank" rel="noopener" data-i18n="projects.meta.viewLink">Ver en GitHub Pages →</a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Proyecto 4: REPX Studio -->
+      <article class="project-card reveal" data-project="repx">
+        <button class="project-toggle" type="button" aria-expanded="false" aria-controls="panel-repx">
+          <span class="project-logo">
+            <img src="assets/logo-repx.svg" alt="REPX Studio" width="40" height="40">
+          </span>
+          <span class="project-heading">
+            <span class="project-name">REPX Studio</span>
+            <span class="project-tag" data-i18n="projects.repx.tag">Gimnasio</span>
+          </span>
+          <span class="project-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="project-panel" id="panel-repx" role="dialog" aria-modal="true">
+          <div class="project-panel-inner">
+            <button class="project-modal-close" type="button" data-i18n-aria="a11y.close" aria-label="Cerrar">&times;</button>
+            <div class="project-modal-header">
+              <span class="project-logo"><img src="assets/logo-repx.svg" alt="REPX Studio" width="40" height="40"></span>
+              <span class="project-heading">
+                <span class="project-name">REPX Studio</span>
+                <span class="project-tag" data-i18n="projects.repx.tag">Gimnasio</span>
+              </span>
+            </div>
+            <p class="project-desc" data-i18n="projects.repx.desc">Web para un espacio de entrenamiento en Vic, con una paleta cálida en verde y terracota.</p>
+            <div class="project-meta">
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.palette">Paleta de colores</span>
+                <div class="swatches">
+                  <span class="swatch" style="background:#F4F2EE; box-shadow: inset 0 0 0 1px rgba(74,55,40,0.3), 0 0 0 1px rgba(74,55,40,0.15);" title="Cream #F4F2EE"></span>
+                  <span class="swatch" style="background:#6E9B73;" title="Green #6E9B73"></span>
+                  <span class="swatch" style="background:#BF8F69;" title="Terracotta #BF8F69"></span>
+                </div>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.fonts">Tipografías</span>
+                <p class="meta-value">Inter</p>
+              </div>
+            </div>
+            <a class="project-link" href="https://lokunder0236.github.io/repx-studio/" target="_blank" rel="noopener" data-i18n="projects.meta.viewLink">Ver en GitHub Pages →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 5: Pilates by Meri -->
+      <article class="project-card reveal" data-project="pilates">
+        <button class="project-toggle" type="button" aria-expanded="false" aria-controls="panel-pilates">
+          <span class="project-logo">
+            <img src="assets/logo-pilates.svg" alt="Pilates by Meri" width="40" height="40">
+          </span>
+          <span class="project-heading">
+            <span class="project-name">Pilates by Meri</span>
+            <span class="project-tag" data-i18n="projects.pilates.tag">Estudio de pilates</span>
+          </span>
+          <span class="project-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="project-panel" id="panel-pilates" role="dialog" aria-modal="true">
+          <div class="project-panel-inner">
+            <button class="project-modal-close" type="button" data-i18n-aria="a11y.close" aria-label="Cerrar">&times;</button>
+            <div class="project-modal-header">
+              <span class="project-logo"><img src="assets/logo-pilates.svg" alt="Pilates by Meri" width="40" height="40"></span>
+              <span class="project-heading">
+                <span class="project-name">Pilates by Meri</span>
+                <span class="project-tag" data-i18n="projects.pilates.tag">Estudio de pilates</span>
+              </span>
+            </div>
+            <p class="project-desc" data-i18n="projects.pilates.desc">Web de reservas para un estudio de pilates, con una estética cálida en tonos tierra.</p>
+            <div class="project-meta">
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.palette">Paleta de colores</span>
+                <div class="swatches">
+                  <span class="swatch" style="background:#F4F0E8; box-shadow: inset 0 0 0 1px rgba(74,55,40,0.3), 0 0 0 1px rgba(74,55,40,0.15);" title="Cream #F4F0E8"></span>
+                  <span class="swatch" style="background:#8B5E3C;" title="Brown #8B5E3C"></span>
+                  <span class="swatch" style="background:#C4956A;" title="Tan #C4956A"></span>
+                </div>
+              </div>
+              <div class="meta-block">
+                <span class="meta-label" data-i18n="projects.meta.fonts">Tipografías</span>
+                <p class="meta-value">Inter</p>
+              </div>
+            </div>
+            <a class="project-link" href="https://lokunder0236.github.io/Pilates-by-Meri/" target="_blank" rel="noopener" data-i18n="projects.meta.viewLink">Ver en GitHub Pages →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="services" class="services">
+    <div class="section-head reveal">
+      <p class="section-kicker" data-i18n="services.kicker">Cómo trabajo</p>
+      <h2 class="section-title" data-i18n="services.title">Servicios</h2>
+      <p class="section-sub" data-i18n="services.sub">Un único servicio principal, hecho a medida: webs personalizadas.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-number">01</span>
+        <h3 class="step-title" data-i18n="services.step1.title">Diseño</h3>
+        <p class="step-text" data-i18n="services.step1.text">UI/UX pensado desde cero para tu marca: estructura, paleta, tipografía y experiencia de usuario.</p>
+      </div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step reveal">
+        <span class="step-number">02</span>
+        <h3 class="step-title" data-i18n="services.step2.title">Desarrollo</h3>
+        <p class="step-text" data-i18n="services.step2.text">Código limpio y funcional que convierte el diseño en una web real, rápida y responsive.</p>
+      </div>
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step reveal">
+        <span class="step-number">03</span>
+        <h3 class="step-title" data-i18n="services.step3.title">Mantenimiento</h3>
+        <p class="step-text" data-i18n="services.step3.text">Actualizaciones y ajustes para que tu web siga funcionando bien con el tiempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-head reveal">
+      <p class="section-kicker" data-i18n="testimonials.kicker">Confianza</p>
+      <h2 class="section-title" data-i18n="testimonials.title">Testimonios</h2>
+    </div>
+    <div class="testimonial-placeholder reveal">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <p data-i18n="testimonials.placeholder">Muy pronto compartiré aquí las palabras de quienes han confiado en mi trabajo.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact" class="contact">
+    <div class="section-head reveal">
+      <p class="section-kicker" data-i18n="contact.kicker">Hablemos</p>
+      <h2 class="section-title" data-i18n="contact.title">¿Tienes un proyecto en mente?</h2>
+      <p class="section-sub" data-i18n="contact.sub">Escríbeme y agendamos una llamada para hablar con calma.</p>
+    </div>
+    <a id="contact-btn" class="btn btn-primary btn-large reveal" href="#" target="_blank" rel="noopener">
+      <span data-i18n="contact.cta">Contáctame</span>
+    </a>
+    <p class="contact-email reveal">carlesbadiaz@gmail.com</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> Carles Badia</p>
+</footer>
+
+<!-- Zona privada: oculta, sin enlaces hacia ella. Se abre con Cmd/Ctrl+Shift+0. -->
+<div id="secret-page" class="secret-page" hidden>
+  <button class="secret-exit" type="button" id="secret-exit" aria-label="Cerrar">&times;</button>
+
+  <div class="secret-lock" id="secret-lock">
+    <h2>Acceso restringido</h2>
+    <form id="secret-form" class="secret-form" autocomplete="off">
+      <label>
+        <span>Usuario</span>
+        <input type="text" id="secret-user" autocomplete="off" spellcheck="false">
+      </label>
+      <label>
+        <span>Contraseña</span>
+        <input type="password" id="secret-pass" autocomplete="new-password">
+      </label>
+      <label>
+        <span>Código de acceso</span>
+        <input type="password" id="secret-code" autocomplete="new-password" inputmode="numeric" maxlength="4">
+      </label>
+      <p class="secret-error" id="secret-error" hidden>Usuario, contraseña o código incorrectos.</p>
+      <button type="submit" class="secret-submit">Entrar</button>
+    </form>
+  </div>
+
+  <div class="secret-content" id="secret-content" hidden>
+    <h2>Panel de visitas</h2>
+    <p class="secret-content-sub">Clics por proyecto y por idioma en el que se hicieron.</p>
+    <div class="analytics-list" id="analytics-list"></div>
+  </div>
+</div>
+
+<script type="module" src="js/firebase-init.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
