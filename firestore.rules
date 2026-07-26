@@ -4,8 +4,11 @@ service cloud.firestore {
 
     function isValidAnalyticsDoc(data) {
       return data.keys().hasOnly(['total', 'es', 'ca', 'en'])
-        && data.total is number && data.es is number
-        && data.ca is number && data.en is number;
+        && data.total is int && data.es is int
+        && data.ca is int && data.en is int
+        && data.total >= 0 && data.es >= 0 && data.ca >= 0 && data.en >= 0
+        && data.total <= 10000000
+        && data.total == data.es + data.ca + data.en;
     }
 
     match /analytics/{docId} {

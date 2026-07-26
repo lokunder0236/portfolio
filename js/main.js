@@ -112,7 +112,22 @@
       if (toggle) toggle.setAttribute("aria-expanded", "true");
       document.body.classList.add("modal-open");
       if (card.dataset.project) recordEvent(card.dataset.project);
+      const closeBtn = card.querySelector(".project-modal-close");
+      if (closeBtn) closeBtn.focus();
     };
+
+    // The backdrop blocks mouse clicks to whatever is behind an open
+    // modal, but keyboard focus can still Tab past it into background
+    // content unless we actively pull it back in.
+    document.addEventListener("focusin", (e) => {
+      const openCardEl = document.querySelector(".project-card.is-open");
+      if (!openCardEl) return;
+      const inner = openCardEl.querySelector(".project-panel-inner");
+      if (inner && !inner.contains(e.target)) {
+        const closeBtn = inner.querySelector(".project-modal-close");
+        if (closeBtn) closeBtn.focus();
+      }
+    });
 
     cards.forEach((card) => {
       const toggle = card.querySelector(".project-toggle");
