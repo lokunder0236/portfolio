@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import {
-  getFirestore, doc, getDoc, runTransaction,
+  getFirestore, doc, getDoc, setDoc, increment,
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import {
   getAuth, signInWithEmailAndPassword, onAuthStateChanged,
@@ -47,27 +47,16 @@ function emptyEntry() {
   return { total: 0, es: 0, ca: 0, en: 0 };
 }
 
-// Reads-then-writes the full {total, es, ca, en} document inside a
-// transaction so two simultaneous clicks can't clobber each other's count,
-// and so every write matches firestore.rules' "all four fields present"
-// validation (a bare increment() merge on a brand-new doc wouldn't).
+// Pure increment, no preceding read — visitor clicks are anonymous, and
+// /analytics reads are admin-only (see firestore.rules), so a
+// read-modify-write here would fail for every real visitor. increment()
+// applies atomically server-side without needing to know the prior value.
 window.fbRecordEvent = async function (key, lang) {
   if (!KNOWN_KEYS.includes(key)) return;
   const langField = LANGS.includes(lang) ? lang : "es";
   const ref = doc(db, "analytics", key);
   try {
-    await runTransaction(db, async (tx) => {
-      const snap = await tx.get(ref);
-      const current = snap.exists() ? snap.data() : emptyEntry();
-      const next = {
-        total: (Number(current.total) || 0) + 1,
-        es: Number(current.es) || 0,
-        ca: Number(current.ca) || 0,
-        en: Number(current.en) || 0,
-      };
-      next[langField] += 1;
-      tx.set(ref, next);
-    });
+    await setDoc(ref, { total: increment(1), [langField]: increment(1) }, { merge: true });
   } catch (e) {
     console.error("Firestore write failed", e);
   }

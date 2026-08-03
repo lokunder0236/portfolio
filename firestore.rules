@@ -2,13 +2,19 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // Writes use a merge() with increment(), so on a brand-new document
+    // the very first write may only carry 2 of the 4 fields (total +
+    // whichever language). request.resource.data reflects that partial
+    // merged result, so fields are read with a default via get() instead
+    // of assuming they exist.
     function isValidAnalyticsDoc(data) {
       return data.keys().hasOnly(['total', 'es', 'ca', 'en'])
-        && data.total is int && data.es is int
-        && data.ca is int && data.en is int
-        && data.total >= 0 && data.es >= 0 && data.ca >= 0 && data.en >= 0
-        && data.total <= 10000000
-        && data.total == data.es + data.ca + data.en;
+        && data.get('total', 0) is int && data.get('es', 0) is int
+        && data.get('ca', 0) is int && data.get('en', 0) is int
+        && data.get('total', 0) >= 0 && data.get('es', 0) >= 0
+        && data.get('ca', 0) >= 0 && data.get('en', 0) >= 0
+        && data.get('total', 0) <= 10000000
+        && data.get('total', 0) == data.get('es', 0) + data.get('ca', 0) + data.get('en', 0);
     }
 
     match /analytics/{docId} {
