@@ -475,6 +475,19 @@ main > section {
 .project-modal-header .project-logo { width: 40px; height: 40px; border-radius: 11px; }
 .project-modal-header .project-name { font-size: 1.2rem; }
 .project-modal-header .project-tag { font-size: 0.8rem; }
+.project-demo-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(74, 55, 40, 0.25);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+}
 .project-desc { font-size: 0.95rem; color: rgba(74, 55, 40, 0.85); }
 .project-meta { display: flex; flex-direction: column; gap: 0.8rem; }
 .meta-block { display: flex; flex-direction: column; gap: 0.35rem; }
