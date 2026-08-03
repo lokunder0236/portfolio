@@ -253,29 +253,31 @@
     const exitBtn = document.getElementById("secret-exit");
     if (!page || !form) return;
 
-    // sha256("CarlesBZ3:2010_Carles33:6646") — checked as one combined
-    // hash (not per-field) so a failed attempt never reveals which of
-    // the three values was wrong. This is client-side obscurity, not
-    // real security: anyone reading this file can see the check.
-    const EXPECTED_HASH = "55f870cccfc59c74f02737374d36e54b57a4577d336dd699b3fa80a303089005";
-
-    async function sha256Hex(text) {
-      const bytes = new TextEncoder().encode(text);
-      const digest = await crypto.subtle.digest("SHA-256", bytes);
-      return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+    function showContent() {
+      lock.hidden = true;
+      content.hidden = false;
+      errorEl.hidden = true;
+      renderAnalytics();
     }
 
-    function openGate() {
+    async function openGate() {
       page.hidden = false;
       document.body.classList.add("modal-open");
-      document.getElementById("secret-user").focus();
+      // Real Firebase Auth session — wait for the SDK's initial check of
+      // any already-signed-in session before deciding what to show.
+      if (window.fbAuthReady) await window.fbAuthReady;
+      if (typeof window.fbIsSignedIn === "function" && window.fbIsSignedIn()) {
+        showContent();
+      } else {
+        lock.hidden = false;
+        content.hidden = true;
+        document.getElementById("secret-email")?.focus();
+      }
     }
 
     function closeGate() {
       page.hidden = true;
       document.body.classList.remove("modal-open");
-      lock.hidden = false;
-      content.hidden = true;
       form.reset();
       errorEl.hidden = true;
     }
@@ -293,19 +295,19 @@
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const user = document.getElementById("secret-user").value.trim();
+      const email = document.getElementById("secret-email").value.trim();
       const pass = document.getElementById("secret-pass").value;
-      const code = document.getElementById("secret-code").value.trim();
-      const hash = await sha256Hex(`${user}:${pass}:${code}`);
-      if (hash === EXPECTED_HASH) {
-        lock.hidden = true;
-        content.hidden = false;
-        errorEl.hidden = true;
-        renderAnalytics();
-      } else {
+      if (typeof window.fbSignIn !== "function") {
+        errorEl.hidden = false;
+        return;
+      }
+      try {
+        await window.fbSignIn(email, pass);
+        showContent();
+      } catch (err) {
         errorEl.hidden = false;
         form.reset();
-        document.getElementById("secret-user").focus();
+        document.getElementById("secret-email").focus();
       }
     });
   }

@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -337,18 +337,14 @@
     <h2>Acceso restringido</h2>
     <form id="secret-form" class="secret-form" autocomplete="off">
       <label>
-        <span>Usuario</span>
-        <input type="text" id="secret-user" autocomplete="off" spellcheck="false">
+        <span>Email</span>
+        <input type="email" id="secret-email" autocomplete="username">
       </label>
       <label>
         <span>Contraseña</span>
-        <input type="password" id="secret-pass" autocomplete="new-password">
+        <input type="password" id="secret-pass" autocomplete="current-password">
       </label>
-      <label>
-        <span>Código de acceso</span>
-        <input type="password" id="secret-code" autocomplete="new-password" inputmode="numeric" maxlength="4">
-      </label>
-      <p class="secret-error" id="secret-error" hidden>Usuario, contraseña o código incorrectos.</p>
+      <p class="secret-error" id="secret-error" hidden>Email o contraseña incorrectos.</p>
       <button type="submit" class="secret-submit">Entrar</button>
     </form>
   </div>
@@ -361,7 +357,7 @@
 </div>
 
 <script type="module" src="js/firebase-init.js"></script>
-<script src="js/i18n.js?v=5"></script>
-<script src="js/main.js?v=5"></script>
+<script src="js/i18n.js?v=6"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>

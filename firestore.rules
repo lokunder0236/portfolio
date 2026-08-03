@@ -12,7 +12,11 @@ service cloud.firestore {
     }
 
     match /analytics/{docId} {
-      allow read: if true;
+      // Writes stay public — every visitor's click needs to land here
+      // with no login. Reads are restricted to the admin account so the
+      // aggregated numbers aren't just publicly listable by anyone.
+      allow read: if request.auth != null
+                  && request.auth.uid == 'EbXfrKVN62X27DULcBXybjpwHYw2';
       allow create, update: if docId in ['pati', 'nova', 'repx', 'pilates', 'contact']
                              && isValidAnalyticsDoc(request.resource.data);
       allow delete: if false;

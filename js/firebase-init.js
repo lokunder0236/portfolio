@@ -2,6 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import {
   getFirestore, doc, getDoc, runTransaction,
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
 // Firebase web config is not a secret — the API key only identifies the
 // project. Access control lives in firestore.rules, not in hiding this.
@@ -19,6 +22,26 @@ const LANGS = ["es", "ca", "en"];
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+
+// The admin panel's real gate: reading /analytics requires being signed
+// in as this specific account (enforced in firestore.rules), not a
+// client-side password check anyone could read out of this file.
+let currentUser = null;
+let resolveAuthReady;
+window.fbAuthReady = new Promise((resolve) => { resolveAuthReady = resolve; });
+onAuthStateChanged(auth, (user) => {
+  currentUser = user;
+  if (resolveAuthReady) { resolveAuthReady(user); resolveAuthReady = null; }
+});
+
+window.fbIsSignedIn = function () {
+  return !!currentUser;
+};
+
+window.fbSignIn = function (email, password) {
+  return signInWithEmailAndPassword(auth, email, password);
+};
 
 function emptyEntry() {
   return { total: 0, es: 0, ca: 0, en: 0 };
