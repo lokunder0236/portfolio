@@ -1,5 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import {
+  initializeAppCheck, ReCaptchaV3Provider,
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app-check.js";
+import {
   getFirestore, doc, getDoc, runTransaction,
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import {
@@ -21,6 +24,18 @@ const KNOWN_KEYS = ["pati", "nova", "repx", "pilates", "contact"];
 const LANGS = ["es", "ca", "en"];
 
 const app = initializeApp(firebaseConfig);
+
+// App Check: Firestore and Authentication are both set to "Enforced" on
+// the Firebase side, so requests without a valid token here — e.g. a
+// script calling the REST API directly with just the public apiKey,
+// bypassing this page entirely — get rejected before they ever reach
+// our security rules. The reCAPTCHA v3 check itself is invisible to
+// real visitors.
+initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider("6LcNAHQtAAAAAJ2q2_Mf6mcoAzUOW6fKHsUfcQBy"),
+  isTokenAutoRefreshEnabled: true,
+});
+
 const db = getFirestore(app);
 const auth = getAuth(app);
 
